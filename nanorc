@@ -1,0 +1,14 @@
+set autoindent
+set backup
+set cutfromcursor
+set linenumbers
+set multibuffer
+set zap
+
+# syntax highlight
+include "/usr/share/nano/yaml.nanorc"
+include "/usr/share/nano/toml.nanorc"
+include "/usr/share/nano/json.nanorc"
+include "/usr/share/nano/lua.nanorc"
+set titlecolor black,green
+set numbercolor white,black
