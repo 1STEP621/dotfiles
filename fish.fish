@@ -5,7 +5,7 @@ if status is-interactive
     set -g fish_greeting
 
     export PATH="$HOME/.local/bin:$PATH"
-    export LANG=ja_JP.UTF-8
+    export LANG='ja_JP.UTF-8'
 
     export BAT_THEME="OneHalfDark"
     set -U FZF_FIND_FILE_COMMAND 'fd --type f --hidden --follow --exclude .git'
@@ -14,10 +14,16 @@ if status is-interactive
 
     alias c='clear'
 
-    alias cmt='git commit -m'
-    alias sw='git switch'
-    alias pull='git pull'
-    alias push='git push'
+    alias install='sudo apt install'
+    alias remove='sudo apt remove'
+    alias uninstall='remove'
+    alias reinstall='sudo apt install --reinstall'
+    alias update='sudo apt update'
+    alias upgrade='sudo apt upgrade'
+    alias autoremove='sudo apt autoremove'
+    alias search='apt search'
+    alias show='apt show'
+    alias purge='sudo apt purge'
 
     function mkpost
         set arg1 $argv[1]
@@ -38,9 +44,7 @@ if status is-interactive
     alias ccs='cargo compete submit'
     function ccn
         cd ~/Programs/rust
-        cargo compete new $1
-        cd ~/Programs/rust/$1
-        code .
+        cargo compete new $argv && cd ~/Programs/rust/$argv && code .
     end
 
     eval (functions cd)
