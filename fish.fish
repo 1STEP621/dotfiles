@@ -9,7 +9,8 @@ if status is-interactive
 
     export BAT_THEME="OneHalfDark"
     set -U FZF_FIND_FILE_COMMAND 'fd --type f --hidden --follow --exclude .git'
-    set -U FZF_PREVIEW_FILE_CMD 'bat --color=always --style=grid --line-range=:500'
+    set -U FZF_PREVIEW_FILE_CMD 'bat -p --color=always --style=grid --line-range=:500'
+    set -U FZF_PREVIEW_DIR_CMD 'll'
     set -U FZF_FIND_FILE_OPTS "--preview '$FZF_PREVIEW_FILE_CMD'"
 
     alias c='clear'
