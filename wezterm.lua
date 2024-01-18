@@ -121,11 +121,6 @@ c.keys = {
     action = act.SplitHorizontal{ domain = "CurrentPaneDomain" },
   },
   {
-    key = 'x',
-    mods = 'CTRL',
-    action = act.CloseCurrentPane{ confirm = false }
-  },
-  {
     key = 'RightArrow',
     mods = 'ALT',
     action = act.ActivatePaneDirection("Right"),

@@ -26,12 +26,6 @@ if status is-interactive
     alias show='apt show'
     alias purge='sudo apt purge'
 
-    function mkpost
-        set arg1 $argv[1]
-        set arg2 $argv[2]
-        curl -X POST -H "Content-Type: application/json" -d '{"i": "m3K0KZ8b7sqaFOphJBVuc18xER8a2Xcj", "text": "'$arg1'"}' https://$arg2/api/notes/create
-    end
-
     alias ls='eza --git --hyperlink --icons --time-style="+%Y-%m-%d %H:%M"'
     alias ll='eza --git --hyperlink --icons --time-style="+%Y-%m-%d %H:%M" -ahl'
     alias lt='eza --git --hyperlink --icons --time-style="+%Y-%m-%d %H:%M" --tree'
