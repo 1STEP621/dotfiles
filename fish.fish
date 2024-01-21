@@ -42,6 +42,15 @@ if status is-interactive
         cargo compete new $argv && cd ~/Programs/rust/$argv && code .
     end
 
+    function toja
+        echo -e "\e[1;36mPless Ctrl-D to finish.\e[0m"
+        deepl --fr auto --to ja -s | tee /dev/tty | xclip -selection clipboard
+    end
+    function toen
+        echo -e "\e[1;36mPless Ctrl-D to finish.\e[0m"
+        deepl --fr auto --to en -s | tee /dev/tty | xclip -selection clipboard
+    end
+    
     eval (functions cd)
     eval (zoxide init fish --cmd cd | source)
     eval (functions cd)
