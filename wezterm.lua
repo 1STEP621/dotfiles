@@ -16,6 +16,7 @@ c.font = wezterm.font_with_fallback({
 c.font_size = 10.5
 c.color_scheme = "OneHalfDark"
 c.default_cursor_style = "SteadyBar"
+c.use_ime = true
 
 -- tab
 c.use_fancy_tab_bar = false
