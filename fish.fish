@@ -44,11 +44,15 @@ if status is-interactive
 
     function toja
         echo -e "\e[1;36mPless Ctrl-D to finish.\e[0m"
-        deepl --fr auto --to ja -s | tee /dev/tty | xclip -selection clipboard
+        deepl --fr auto --to ja -s 2> /dev/null | tee /dev/tty | xclip -selection clipboard
     end
     function toen
         echo -e "\e[1;36mPless Ctrl-D to finish.\e[0m"
-        deepl --fr auto --to en -s | tee /dev/tty | xclip -selection clipboard
+        deepl --fr auto --to en -s 2> /dev/null | tee /dev/tty | xclip -selection clipboard
+    end
+    
+    function ff
+        firefox $argv 2> /dev/null & disown
     end
     
     eval (functions cd)
