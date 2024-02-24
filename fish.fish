@@ -42,6 +42,8 @@ if status is-interactive
         cargo compete new $argv && cd ~/Programs/rust/$argv && code .
     end
 
+    alias webstorm='webstorm.sh'
+
     function toja
         echo -e "\e[1;36mPless Ctrl-D to finish.\e[0m"
         deepl --fr auto --to ja -s 2> /dev/null | tee /dev/tty | xclip -selection clipboard
