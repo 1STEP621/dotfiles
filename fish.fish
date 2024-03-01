@@ -41,6 +41,7 @@ if status is-interactive
         cd ~/Programs/rust
         cargo compete new $argv && cd ~/Programs/rust/$argv && code .
     end
+    alias rust='evcxr'
 
     alias webstorm='webstorm.sh'
 
