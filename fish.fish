@@ -43,7 +43,6 @@ if status is-interactive
     end
     alias rust='evcxr'
 
-    alias webstorm='webstorm.sh'
     function cubeide
         /opt/st/stm32cubeide_1.15.0/stm32cubeide_wayland 2> /dev/null & disown
     end
