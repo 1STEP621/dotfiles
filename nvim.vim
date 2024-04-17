@@ -200,9 +200,10 @@ set wildmenu
 set mouse=a
 
 set mousemodel=popup
+
 set t_Co=256
 set guioptions=egmrti
-set gfn=Monospace\ 10
+set gfn=Roboto_Mono,_Noto_Sans_CJK_JP
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")

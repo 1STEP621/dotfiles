@@ -44,8 +44,10 @@ if status is-interactive
     alias rust='evcxr'
 
     function cubeide
-        /opt/st/stm32cubeide_1.15.0/stm32cubeide_wayland 2> /dev/null & disown
+        /opt/st/stm32cubeide_1.15.0/stm32cubeide 2> /dev/null & disown
     end
+
+    alias webstorm='webstorm 2> /dev/null & disown'
 
     function toja
         echo -e "\e[1;36mPless Ctrl-D to finish.\e[0m"
