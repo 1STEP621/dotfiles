@@ -112,6 +112,16 @@ c.keys = {
     end),
   },
   {
+    key = 'c',
+    mods = 'CTRL|SHIFT',
+    action = act.CopyTo("ClipboardAndPrimarySelection"),
+  },
+  {
+    key = 'v',
+    mods = 'CTRL|SHIFT',
+    action = act.PasteFrom("PrimarySelection"),
+  },
+  {
     key = 't',
     mods = 'CTRL',
     action = act.SpawnTab("DefaultDomain"),

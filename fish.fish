@@ -2,16 +2,19 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     set -g theme_display_date yes
     set -g theme_date_format "+%F %H:%M"
-    set -g fish_greeting
+    set -g fish_greeting ""
 
-    export PATH="$HOME/.local/bin:$PATH"
-    export LANG='ja_JP.UTF-8'
+    set -x LANG 'ja_JP.UTF-8'
 
-    export BAT_THEME="OneHalfDark"
+    fish_add_path ~/.local/bin/
+    fish_add_path ~/.cargo/bin/
+
+    set -x BAT_THEME "OneHalfDark"
     set -U FZF_FIND_FILE_COMMAND 'fd --type f --hidden --follow --exclude .git'
     set -U FZF_PREVIEW_FILE_CMD 'bat -p --color=always --style=grid --line-range=:500'
     set -U FZF_PREVIEW_DIR_CMD 'll'
     set -U FZF_FIND_FILE_OPTS "--preview '$FZF_PREVIEW_FILE_CMD'"
+    set -e FZF_COMPLETE
 
     alias c='clear'
 
@@ -31,9 +34,10 @@ if status is-interactive
     alias lt='eza --git --hyperlink --icons --time-style="+%Y-%m-%d %H:%M" --tree'
 
     alias gcs='gh copilot suggest -t shell'
+    alias gcsg='gh copilot suggest -t git'
     alias gce='gh copilot explain'
 
-    export RUST_BACKTRACE=1
+    set -x RUST_BACKTRACE 1
     alias cc='cargo compete'
     alias cct='cargo compete test'
     alias ccs='cargo compete submit'
@@ -46,8 +50,6 @@ if status is-interactive
     function cubeide
         /opt/st/stm32cubeide_1.15.0/stm32cubeide 2> /dev/null & disown
     end
-
-    alias webstorm='webstorm 2> /dev/null & disown'
 
     function toja
         echo -e "\e[1;36mPless Ctrl-D to finish.\e[0m"
