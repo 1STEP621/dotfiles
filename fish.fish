@@ -8,6 +8,7 @@ if status is-interactive
 
     fish_add_path ~/.local/bin/
     fish_add_path ~/.cargo/bin/
+    fish_add_path ~/.local/share/coursier/bin
 
     set -x BAT_THEME "OneHalfDark"
     set -U FZF_FIND_FILE_COMMAND 'fd --type f --hidden --follow --exclude .git'
@@ -43,7 +44,7 @@ if status is-interactive
     alias ccs='cargo compete submit'
     function ccn
         cd ~/Programs/rust
-        cargo compete new $argv && cd ~/Programs/rust/$argv && code .
+        cargo compete new $argv && cd ~/Programs/rust-practice/$argv && code . -r
     end
     alias rust='evcxr'
 
@@ -68,4 +69,6 @@ if status is-interactive
     eval (zoxide init fish --cmd cd | source)
     eval (functions cd)
     eval (functions __zoxide_cd_internal)
+    
+    thefuck --alias | source
 end
