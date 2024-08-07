@@ -8,6 +8,7 @@ if status is-interactive
 
     fish_add_path ~/.local/bin/
     fish_add_path ~/.cargo/bin/
+    fish_add_path ~/.pub-cache/bin/
     fish_add_path ~/.local/share/coursier/bin
 
     set -x BAT_THEME "OneHalfDark"
@@ -44,9 +45,14 @@ if status is-interactive
     alias ccs='cargo compete submit'
     function ccn
         cd ~/Programs/rust
-        cargo compete new $argv && cd ~/Programs/rust-practice/$argv && code . -r
+        cargo compete new $argv && cd ~/Programs/rust-practice/$argv && code . -r -g src/bin/a.rs
     end
     alias rust='evcxr'
+
+    function mkcd
+        mkdir -p $argv
+        cd $argv
+    end
 
     function cubeide
         /opt/st/stm32cubeide_1.15.0/stm32cubeide 2> /dev/null & disown

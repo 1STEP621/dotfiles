@@ -7,6 +7,7 @@ local GREEN = "#98c379"
 local GRAY = "#abb2bf"
 local BLACK = "#1e222a"
 local BG = "#282c34"
+local DO_NOTHING_ACT = wezterm.action_callback(function(_, __) end)
 
 -- general
 c.font = wezterm.font_with_fallback({
@@ -160,6 +161,33 @@ c.keys = {
     key = 'LeftArrow',
     mods = 'CTRL',
     action = act.ActivateTabRelative(-1),
+  }
+}
+c.mouse_bindings = {
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'SHIFT',
+    action = act.OpenLinkAtMouseCursor,
+  },
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'NONE',
+    action = DO_NOTHING_ACT,
+  },
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'ALT',
+    action = DO_NOTHING_ACT,
+  },
+  {
+    event = { Up = { streak = 2, button = 'Left' } },
+    mods = 'NONE',
+    action = DO_NOTHING_ACT,
+  },
+  {
+    event = { Up = { streak = 3, button = 'Left' } },
+    mods = 'NONE',
+    action = DO_NOTHING_ACT,
   }
 }
 
