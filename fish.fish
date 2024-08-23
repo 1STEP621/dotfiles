@@ -18,6 +18,8 @@ if status is-interactive
     set -U FZF_FIND_FILE_OPTS "--preview '$FZF_PREVIEW_FILE_CMD'"
     set -e FZF_COMPLETE
 
+    set -x IS_NOT_FIRST_LAUNCH 1
+
     alias c='clear'
 
     alias install='sudo apt install'
@@ -44,8 +46,8 @@ if status is-interactive
     alias cct='cargo compete test'
     alias ccs='cargo compete submit'
     function ccn
-        cd ~/Programs/rust
-        cargo compete new $argv && cd ~/Programs/rust-practice/$argv && code . -r -g src/bin/a.rs
+        cd ~/Programs/rust-practice/atcoder
+        cargo compete new $argv && cd ~/Programs/rust-practice/atcoder/$argv && code . -r -g src/bin/a.rs
     end
     alias rust='evcxr'
 
@@ -75,6 +77,4 @@ if status is-interactive
     eval (zoxide init fish --cmd cd | source)
     eval (functions cd)
     eval (functions __zoxide_cd_internal)
-    
-    thefuck --alias | source
 end
