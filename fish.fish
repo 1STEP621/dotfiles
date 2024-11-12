@@ -4,7 +4,7 @@ if status is-interactive
     set -g theme_date_format "+%F %H:%M"
     set -g fish_greeting ""
 
-    set -x LANG 'ja_JP.UTF-8'
+    set -x LC_ALL "C.UTF-8"
 
     fish_add_path ~/.local/bin/
     fish_add_path ~/.cargo/bin/
