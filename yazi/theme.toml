@@ -1,0 +1,15 @@
+[flavor]
+use = "onedark"
+
+[manager]
+border_style = {fg = "white"}
+hovered = {reversed = true}
+preview_hovered = {reversed = true}
+tab_active = {reversed = true}
+
+[status]
+separator_close = ""
+separator_open = ""
+
+[input]
+selected = {reversed = true}
